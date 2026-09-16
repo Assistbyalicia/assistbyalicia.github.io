@@ -136,7 +136,8 @@
     };
 
     if (href.indexOf("calendar.notion.so") > -1) {
-      track("generate_lead", Object.assign({ lead_source: "appel_decouverte" }, base));
+      var leadSource = href.indexOf("diagnostic-stack-outils-ia") > -1 ? "diagnostic_stack_ia" : "appel_decouverte";
+      track("generate_lead", Object.assign({ lead_source: leadSource }, base));
     } else if (href.indexOf("mailto:") === 0) {
       track("contact_email_click", base);
     } else if (/(linkedin|facebook|instagram)\.com/.test(href)) {
