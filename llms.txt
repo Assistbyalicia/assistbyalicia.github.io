@@ -15,7 +15,12 @@ Le site présente ses offres d'accompagnement autour de Notion, de l'automatisat
 - URL: https://assistbyalicia.fr/offres.html
   Importance: élevée
   Rôle: page d'offres
-  Description: Vue d'ensemble des offres d'accompagnement : mission Express Notion (7 jours) et accompagnement Bras droit opérationnel.
+  Description: Vue d'ensemble des offres d'accompagnement : diagnostic de stack d'outils (97€), mission Express Notion (7 jours) et accompagnement Bras droit opérationnel.
+
+- URL: https://assistbyalicia.fr/diagnostic-stack-outils-ia.html
+  Importance: élevée
+  Rôle: offre d'entrée
+  Description: Diagnostic de 45 minutes de la stack d'outils et d'IA d'un solopreneur : coût réel, doublons, quick wins, livrable écrit sous 48h. Prix de lancement 97€.
 
 - URL: https://assistbyalicia.fr/offre-express.html
   Importance: élevée
