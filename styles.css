@@ -226,6 +226,12 @@ nav {
 
 .submenu li { width: 100%; }
 
+.submenu li.submenu-free {
+  border-top: 1px solid rgba(202, 255, 0, 0.12);
+  margin-top: 0.3rem;
+}
+.submenu li.submenu-free a { color: rgba(255, 255, 255, 0.6); }
+
 .submenu a {
   display: block;
   padding: 0.85rem 1rem;
@@ -754,6 +760,35 @@ h3 {
 .offre-card h3 { color: var(--white); margin-top: var(--space-1); }
 .offre-card p { font-size: var(--text-sm); color: var(--text-muted); margin: 0; max-width: 100%; }
 .offre-card .btn-primary, .offre-card .btn-secondary { margin-top: auto; align-self: flex-start; }
+
+.offres-list {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.offre-row {
+  background: rgba(30, 42, 74, 0.38);
+  border: 1px solid rgba(202, 255, 0, 0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.2fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.offre-row.featured { border-color: rgba(255, 71, 87, 0.35); }
+
+.offre-row-head h3 { color: var(--white); margin-bottom: var(--space-2); }
+.offre-row-head .price { margin-bottom: var(--space-4); }
+
+.offre-row-cell .eyebrow { margin-bottom: var(--space-2); display: block; }
+.offre-row-cell p { font-size: var(--text-sm); color: var(--text-muted); margin: 0; max-width: 100%; }
+
+@media (max-width: 900px) {
+  .offre-row { grid-template-columns: 1fr; }
+}
 
 .why-card {
   background: rgba(30, 42, 74, 0.3);
@@ -1395,6 +1430,13 @@ footer span { white-space: nowrap; }
     display: flex;
     flex-direction: column;
     padding: 0.2rem 0 0.5rem 0.8rem;
+  }
+
+  .mobile-menu a.mobile-submenu-free {
+    border-top: 1px solid rgba(202, 255, 0, 0.12);
+    margin-top: 0.3rem;
+    padding-top: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   .offres-split,
