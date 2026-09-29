@@ -11,5 +11,6 @@
   { "from": "/sortir-de-sa-zone-de-confort/", "to": "/qui-suis-je.html" },
   { "from": "/category/delegation/", "to": "/choisir-les-taches-a-deleguer.html" },
   { "from": "/category/outils-digitaux/", "to": "/outils-digitaux.html" },
-  { "from": "/category/partage/", "to": "/ressources.html" }
+  { "from": "/category/partage/", "to": "/ressources.html" },
+  { "from": "/diagnostic-stack-outils-ia.html", "to": "/diagnostic-outils-numeriques.html" }
 ]
