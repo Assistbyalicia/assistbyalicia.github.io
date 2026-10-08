@@ -4,6 +4,7 @@
   {% include "head-common.njk" %}
   <title>{{ pageTitle or title }}</title>
   <meta name="description" content="{{ description }}" />
+  {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
 </head>
 <body>
   <div id="site-header"></div>
