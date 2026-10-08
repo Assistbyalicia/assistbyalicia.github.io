@@ -1,16 +1,62 @@
 [
-  { "from": "/a-propos/", "to": "/qui-suis-je.html" },
-  { "from": "/contact/", "to": "/contact.html" },
-  { "from": "/conditions-generales-de-vente/", "to": "/mention-legale-cgv.html" },
-  { "from": "/mentions-legales/", "to": "/mention-legale-cgv.html" },
-  { "from": "/politique-de-confidentialite-des-donnees-personnelles/", "to": "/politique-de-confidentialite.html" },
-  { "from": "/assistante-digitale/", "to": "/assistante-digitale.html" },
-  { "from": "/outils-digitaux/", "to": "/outils-digitaux.html" },
-  { "from": "/blog/", "to": "/ressources.html" },
-  { "from": "/choisir-les-taches-a-deleguer/", "to": "/choisir-les-taches-a-deleguer.html" },
-  { "from": "/sortir-de-sa-zone-de-confort/", "to": "/qui-suis-je.html" },
-  { "from": "/category/delegation/", "to": "/choisir-les-taches-a-deleguer.html" },
-  { "from": "/category/outils-digitaux/", "to": "/outils-digitaux.html" },
-  { "from": "/category/partage/", "to": "/ressources.html" },
-  { "from": "/diagnostic-stack-outils-ia.html", "to": "/diagnostic-outils-numeriques.html" }
+  {
+    "from": "/a-propos/",
+    "to": "/qui-suis-je.html"
+  },
+  {
+    "from": "/a-propos.html",
+    "to": "/qui-suis-je.html"
+  },
+  {
+    "from": "/contact/",
+    "to": "/contact.html"
+  },
+  {
+    "from": "/conditions-generales-de-vente/",
+    "to": "/mention-legale-cgv.html"
+  },
+  {
+    "from": "/mentions-legales/",
+    "to": "/mention-legale-cgv.html"
+  },
+  {
+    "from": "/politique-de-confidentialite-des-donnees-personnelles/",
+    "to": "/politique-de-confidentialite.html"
+  },
+  {
+    "from": "/assistante-digitale/",
+    "to": "/assistante-digitale.html"
+  },
+  {
+    "from": "/outils-digitaux/",
+    "to": "/outils-digitaux.html"
+  },
+  {
+    "from": "/blog/",
+    "to": "/ressources.html"
+  },
+  {
+    "from": "/choisir-les-taches-a-deleguer/",
+    "to": "/choisir-les-taches-a-deleguer.html"
+  },
+  {
+    "from": "/sortir-de-sa-zone-de-confort/",
+    "to": "/qui-suis-je.html"
+  },
+  {
+    "from": "/category/delegation/",
+    "to": "/choisir-les-taches-a-deleguer.html"
+  },
+  {
+    "from": "/category/outils-digitaux/",
+    "to": "/outils-digitaux.html"
+  },
+  {
+    "from": "/category/partage/",
+    "to": "/ressources.html"
+  },
+  {
+    "from": "/diagnostic-stack-outils-ia.html",
+    "to": "/diagnostic-outils-numeriques.html"
+  }
 ]
