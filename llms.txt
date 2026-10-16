@@ -90,6 +90,7 @@ Le site présente ses offres d'accompagnement autour de Notion, de l'automatisat
 - https://assistbyalicia.fr/gestion-process-entreprise.html — Gestion et documentation des process.
 - https://assistbyalicia.fr/centraliser-son-organisation.html — Centraliser l'information et les outils.
 - https://assistbyalicia.fr/notion-freelance.html — Notion pour freelances et indépendants.
+- https://assistbyalicia.fr/automatiser-notion.html — Comment automatiser Notion : boutons, automatisations natives, n8n/Make/Zapier, agents IA.
 
 ## Thèmes clés du site
 

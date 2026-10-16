@@ -35,6 +35,12 @@
       "tag": "Gagner du temps sans coder",
       "pages": [
         {
+          "titre": "Comment automatiser Notion",
+          "url": "/automatiser-notion.html",
+          "resume": "Boutons, automatisations natives, n8n/Make/Zapier ou agents IA : quel niveau choisir et par où commencer.",
+          "statut": "en-ligne"
+        },
+        {
           "titre": "Automatisation No-Code : n8n, Make, Zapier",
           "url": "/automatisation-no-code.html",
           "resume": "Automatiser tes tâches répétitives sans coder, seul ou en solo.",
