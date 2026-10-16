@@ -15,9 +15,19 @@
           "url": "/organisation-entreprise-notion.html",
           "resume": "Structurer Notion comme système central pour une équipe, TPE ou PME.",
           "statut": "en-ligne"
+        },
+        {
+          "titre": "Notion pour freelance",
+          "url": "/notion-freelance.html",
+          "resume": "Pourquoi Notion aide vraiment un freelance, et comment l'utiliser pour piloter clients, projets et finances.",
+          "statut": "en-ligne"
+        },
+        {
+          "titre": "C'est quoi un bras droit Notion ?",
+          "url": "/bras-droit-notion.html",
+          "resume": "Le rôle d'un bras droit spécialisé Notion : construire, faire vivre et faire évoluer ton système.",
+          "statut": "en-ligne"
         }
-        
-        
       ]
     },
     {
@@ -43,6 +53,12 @@
       "tag": "Reprendre le contrôle de ton temps",
       "pages": [
         {
+          "titre": "Assistante digitale : c'est quoi ?",
+          "url": "/assistante-digitale.html",
+          "resume": "Le rôle d'une assistante digitale, ses missions, et la différence avec une assistante virtuelle ou un bras droit.",
+          "statut": "en-ligne"
+        },
+        {
           "titre": "Pourquoi faire un audit de temps ?",
           "url": "/pourquoi-faire-un-audit-de-temps.html",
           "resume": "Comprendre où passe réellement ton temps, avec un template gratuit.",
@@ -54,12 +70,12 @@
           "resume": "Cartographier et prioriser tes process avant de les structurer ou de les automatiser.",
           "statut": "en-ligne"
         },
-              {
-  "titre": "Centraliser son organisation",
-  "url": "/centraliser-son-organisation.html",
-  "resume": "Trop d'outils dispersés ? Par où commencer pour centraliser ton organisation, seul ou en équipe.",
-  "statut": "en-ligne"
-},
+        {
+          "titre": "Centraliser son organisation",
+          "url": "/centraliser-son-organisation.html",
+          "resume": "Trop d'outils dispersés ? Par où commencer pour centraliser ton organisation, seul ou en équipe.",
+          "statut": "en-ligne"
+        },
         {
           "titre": "Comment choisir ses outils digitaux",
           "url": "/outils-digitaux.html",
@@ -75,7 +91,7 @@
       ]
     }
   ],
- "hors_cluster": [
+  "hors_cluster": [
     {
       "titre": "Ma méthode d'accompagnement",
       "url": "/methode-accompagnement.html",
