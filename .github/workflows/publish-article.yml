@@ -1,0 +1,124 @@
+name: Publish article SEO
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    # Ne s'exécute que si la PR est mergée ET que la branche commence par draft/article-
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'draft/article-')
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+
+      - name: Mettre à jour ressources.json et sitemap.xml
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          python3 << 'PYEOF'
+          import json, re, os
+          from datetime import date
+
+          branch = os.environ['BRANCH']
+          slug = branch.replace('draft/article-', '')
+          print(f"Publication de l'article : {slug}")
+
+          article_path = f"src/{slug}.njk"
+          if not os.path.exists(article_path):
+              print(f"ERREUR : fichier {article_path} introuvable")
+              exit(1)
+
+          with open(article_path, encoding='utf-8') as f:
+              content = f.read()
+
+          # Extraire le titre depuis le front matter (champ title)
+          title_match = re.search(r'^title:\s*["\']?([^"\'\n]+)["\']?', content, re.MULTILINE)
+          title = title_match.group(1).strip() if title_match else slug.replace('-', ' ').title()
+
+          # Extraire le cluster et le résumé depuis le commentaire HTML en fin de fichier
+          cluster_match = re.search(r'<!--\s*CLUSTER:\s*([^|]+?)\s+RESUME:\s*(.+?)\s*-->', content)
+          if cluster_match:
+              cluster_name = cluster_match.group(1).strip()
+              resume = cluster_match.group(2).strip()
+          else:
+              print("Commentaire CLUSTER/RESUME absent — fallback sur 'Assistance & organisation'")
+              cluster_name = 'Assistance & organisation'
+              resume = title
+
+          # Mise à jour de ressources.json
+          with open('src/_data/ressources.json', encoding='utf-8') as f:
+              ressources = json.load(f)
+
+          url = f"/{slug}.html"
+          new_page = {"titre": title, "url": url, "resume": resume, "statut": "en-ligne"}
+
+          # Vérifier si l'article est déjà présent
+          already_present = any(
+              p['url'] == url
+              for cluster in ressources['clusters']
+              for p in cluster['pages']
+          )
+
+          if already_present:
+              print(f"L'article {url} est déjà dans ressources.json, pas de doublon ajouté.")
+          else:
+              added = False
+              for cluster in ressources['clusters']:
+                  if cluster['nom'].lower() in cluster_name.lower() or cluster_name.lower() in cluster['nom'].lower():
+                      cluster['pages'].append(new_page)
+                      added = True
+                      print(f"Ajouté au cluster '{cluster['nom']}'")
+                      break
+              if not added:
+                  # Fallback : dernier cluster
+                  ressources['clusters'][-1]['pages'].append(new_page)
+                  print(f"Fallback : ajouté au cluster '{ressources['clusters'][-1]['nom']}'")
+
+              with open('src/_data/ressources.json', 'w', encoding='utf-8') as f:
+                  json.dump(ressources, f, ensure_ascii=False, indent=2)
+
+          # Mise à jour de sitemap.xml
+          with open('sitemap.xml', encoding='utf-8') as f:
+              sitemap = f.read()
+
+          if f"/{slug}.html" not in sitemap:
+              today = date.today().isoformat()
+              new_entry = (
+                  f"  <url>\n"
+                  f"    <loc>https://assistbyalicia.fr/{slug}.html</loc>\n"
+                  f"    <lastmod>{today}</lastmod>\n"
+                  f"    <changefreq>monthly</changefreq>\n"
+                  f"    <priority>0.8</priority>\n"
+                  f"  </url>"
+              )
+              sitemap = sitemap.replace('</urlset>', f'{new_entry}\n</urlset>')
+              with open('sitemap.xml', 'w', encoding='utf-8') as f:
+                  f.write(sitemap)
+              print(f"URL ajoutée au sitemap : https://assistbyalicia.fr/{slug}.html")
+          else:
+              print(f"URL déjà présente dans le sitemap.")
+
+          PYEOF
+
+      - name: Committer et pousser
+        run: |
+          SLUG="${{ github.event.pull_request.head.ref }}"
+          SLUG="${SLUG//draft\/article-/}"
+          git config user.email "contact@assistbyalicia.fr"
+          git config user.name "Claude — Assist by Alicia"
+          git add src/_data/ressources.json sitemap.xml
+          if git diff --staged --quiet; then
+            echo "Aucune modification à committer."
+          else
+            git commit -m "publish: $SLUG ajouté à ressources.json et sitemap"
+            git push
+          fi
