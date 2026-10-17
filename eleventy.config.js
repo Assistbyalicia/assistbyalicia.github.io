@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("Capture - Audit de temps.png");
   eleventyConfig.addPassthroughCopy("partials");
   eleventyConfig.addPassthroughCopy("llms.txt");
+  eleventyConfig.addPassthroughCopy("images");
 
   // Force les URLs en .html au lieu de /dossier/index.html
   eleventyConfig.addGlobalData("permalink", "{{ page.filePathStem }}.html");

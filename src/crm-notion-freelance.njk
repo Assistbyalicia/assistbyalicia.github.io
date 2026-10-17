@@ -33,15 +33,16 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
 
     <div class="intro-card">
       <p>
-        <strong>Un CRM Notion</strong>, c'est un ensemble de bases de données reliées entre elles
-        qui centralisent tes contacts, tes opportunités et l'historique de tes échanges,
-        pour que tu saches toujours qui relancer, quand, et pourquoi. Pas besoin d'un logiciel
-        dédié : pour un freelance, Notion fait très bien le travail à condition de rester simple.
+        Un CRM Notion, c'est une base de données qui centralise tes contacts,
+        leur statut commercial et la prochaine action à faire, pour que tu saches
+        toujours qui relancer, quand, et pourquoi. Pas besoin d'un logiciel dédié :
+        pour un freelance avec quelques dizaines de contacts actifs, deux bases
+        Notion suffisent à tenir un suivi sérieux.
       </p>
       <p>
-        <strong>En bref :</strong> tu vas découvrir la structure minimale d'un CRM,
-        les 5 étapes pour le monter, les automatisations qui valent le coup, et les signes
-        qu'il est temps de passer à autre chose.
+        La version que j'utilise se construit autour d'un principe simple :
+        une fiche = un contact + une prochaine action + une date de relance.
+        Pas de table d'interactions, pas de base d'opportunités séparée.
       </p>
       <div class="highlight-quote">
         Un bon CRM de freelance n'est pas le plus complet : c'est celui que tu ouvres vraiment chaque semaine.
@@ -61,15 +62,15 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <div class="grid-3" style="margin-top: var(--space-6);">
       <div class="card">
         <h3>Plus aucune relance oubliée</h3>
-        <p>Chaque contact a une prochaine action et une date. Une vue te montre ce qui est en retard.</p>
+        <p>Chaque contact a une prochaine action et une date. Une vue te montre ce qui est à traiter aujourd'hui.</p>
       </div>
       <div class="card">
         <h3>Une vision claire du pipeline</h3>
-        <p>Tu vois combien d'opportunités sont en cours, à quelle étape, et pour quel montant estimé.</p>
+        <p>Tu vois combien de discussions sont en cours, à quelle étape chacune se trouve, sans chercher dans tes mails.</p>
       </div>
       <div class="card">
-        <h3>Un historique à portée de main</h3>
-        <p>Avant un appel, tu retrouves en dix secondes ce qui s'est dit et ce qui a été promis.</p>
+        <h3>Un contexte à portée de main</h3>
+        <p>Avant un appel, tu retrouves en dix secondes l'offre envisagée et la prochaine action convenue.</p>
       </div>
     </div>
   </article>
@@ -77,9 +78,10 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
   <!-- STRUCTURE -->
   <article class="section-wrap" style="padding-top: 0;" id="structure">
     <p class="section-tag">La structure</p>
-    <h2>Les bases à <em>créer</em></h2>
+    <h2>Deux bases. Pas <em>trois</em></h2>
     <p>
-      Trois bases suffisent pour démarrer. Tu peux en ajouter plus tard, jamais l'inverse sans douleur.
+      La plupart des tutos CRM Notion te parlent de trois tables : Contacts, Opportunités, Interactions.
+      Dans la pratique, c'est trop lourd à maintenir seul. La structure que j'utilise tient sur deux bases.
     </p>
 
     <div class="table-wrap" style="margin-top: var(--space-6);">
@@ -93,23 +95,140 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         </thead>
         <tbody>
           <tr>
-            <td>Contacts</td>
-            <td data-label="Rôle">Qui est la personne ou l'entreprise</td>
-            <td data-label="Propriétés clés">Nom, email, société, source, type (prospect, client, partenaire)</td>
+            <td>Contacts et relances</td>
+            <td data-label="Rôle">Une fiche par personne, avec tout le suivi commercial</td>
+            <td data-label="Propriétés clés">Nom, Étape commerciale, Offres envisagées, Prochaine action, Date de relance, E-mail</td>
           </tr>
           <tr>
-            <td>Opportunités</td>
-            <td data-label="Rôle">Chaque projet potentiel, avec son statut</td>
-            <td data-label="Propriétés clés">Statut, montant estimé, contact (relation), prochaine action, date de relance</td>
-          </tr>
-          <tr>
-            <td>Interactions</td>
-            <td data-label="Rôle">Journal des échanges</td>
-            <td data-label="Propriétés clés">Date, type (appel, mail, rendez-vous), résumé, contact (relation)</td>
+            <td>Catalogue des offres</td>
+            <td data-label="Rôle">Liste tes offres avec leurs prix et formats</td>
+            <td data-label="Propriétés clés">Nom, Prix de référence, Format, Durée, Périmètre</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <p style="margin-top: var(--space-6);">
+      L'étape commerciale est une propriété "select" de chaque fiche contact.
+      Trois valeurs suffisent pour démarrer : <strong>En attente de réponse</strong>,
+      <strong>Achat confirmé</strong>, <strong>Sans suite</strong>.
+      C'est ce champ qui alimente la vue Kanban et te permet de voir ton pipeline d'un coup d'oeil.
+    </p>
+
+    <figure style="margin-top: var(--space-6);">
+      <img
+        src="/images/crm-notion-mes-contacts.jpg"
+        alt="Vue galerie de la base contacts dans Notion — deux fiches contact avec étape commerciale et prochaine action"
+        style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
+        loading="lazy"
+        width="1484"
+        height="812"
+      />
+      <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
+        La vue galerie "Mes contacts" — chaque fiche affiche l'étape commerciale, les offres envisagées et la prochaine action.
+      </figcaption>
+    </figure>
+  </article>
+
+  <!-- LES VUES -->
+  <article class="section-wrap" style="padding-top: 0;" id="vues">
+    <p class="section-tag">Au quotidien</p>
+    <h2>Trois vues pour <em>piloter</em> tes relances</h2>
+    <p>
+      Une seule base contacts, mais trois vues différentes selon ce que tu as besoin de voir.
+      Chaque vue répond à une question concrète.
+    </p>
+
+    <div class="steps" style="margin-top: var(--space-6);">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Mes contacts (vue galerie)</h3>
+        <p>
+          Vue de référence sur tout ton répertoire. Une carte par contact avec son statut commercial,
+          les offres discutées et la prochaine action. Tu l'utilises pour retrouver quelqu'un
+          ou vérifier qu'une fiche existe avant d'en créer une nouvelle.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>À recontacter (vue tableau filtrée)</h3>
+        <p>
+          Vue opérationnelle du quotidien. Elle filtre les contacts dont la date de relance
+          correspond à aujourd'hui. Chaque ligne affiche : nom, étape commerciale, prochaine action,
+          date de relance et e-mail. Tu traites la liste, tu mets à jour chaque fiche,
+          et tu refermes. 15 minutes maximum.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Discussions en cours (vue Kanban)</h3>
+        <p>
+          Vue pipeline par étape commerciale. Chaque colonne correspond à un statut :
+          En attente de réponse, Achat confirmé, Sans suite.
+          Tu vois en un coup d'oeil où en est chaque discussion.
+        </p>
+      </div>
+    </div>
+
+    <figure style="margin-top: var(--space-6);">
+      <img
+        src="/images/crm-notion-a-recontacter.jpg"
+        alt="Vue tableau des contacts à recontacter dans Notion — colonnes Étape commerciale, Prochaine action, Date de relance"
+        style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
+        loading="lazy"
+        width="1484"
+        height="812"
+      />
+      <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
+        La vue "À recontacter — journée exemple" : tableau filtré sur la date du jour, avec l'étape et la prochaine action visibles directement.
+      </figcaption>
+    </figure>
+
+    <figure style="margin-top: var(--space-6);">
+      <img
+        src="/images/crm-notion-discussions.jpg"
+        alt="Vue Kanban des discussions en cours dans Notion — colonnes par étape commerciale"
+        style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
+        loading="lazy"
+        width="1484"
+        height="812"
+      />
+      <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
+        La vue "Discussions en cours" : Kanban par étape commerciale. Ici, Louise Morel est en attente de réponse depuis le 17 octobre.
+      </figcaption>
+    </figure>
+  </article>
+
+  <!-- CATALOGUE OFFRES -->
+  <article class="section-wrap" style="padding-top: 0;" id="catalogue">
+    <p class="section-tag">La deuxième base</p>
+    <h2>Le catalogue des offres, <em>séparé</em></h2>
+    <p>
+      La base Contacts est reliée à un catalogue d'offres. Quand tu renseignes une fiche contact,
+      tu sélectionnes les offres qu'il envisage plutôt que de les ressaisir à la main.
+      Ça te donne une référence commune et évite les variations de nom d'une fiche à l'autre.
+    </p>
+    <p style="margin-top: var(--space-4);">
+      Le catalogue contient le nom de chaque offre, un prix de référence (fictif dans la démo),
+      le format (individuel, accompagnement), la durée et le périmètre. Le montant retenu
+      au moment de la vente se renseigne dans la fiche de vente, pas dans le catalogue.
+    </p>
+
+    <figure style="margin-top: var(--space-6);">
+      <img
+        src="/images/crm-notion-catalogue-offres.jpg"
+        alt="Base catalogue des offres dans Notion — tableau avec nom, prix de référence, format, durée et périmètre"
+        style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
+        loading="lazy"
+        width="1484"
+        height="812"
+      />
+      <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
+        Le catalogue des offres — deux offres de démo : Séance Clarté (60 minutes, individuelle) et Cap Sérénité (8 semaines, accompagnement).
+      </figcaption>
+    </figure>
   </article>
 
   <!-- ETAPES -->
@@ -121,67 +240,51 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <div class="steps" style="margin-top: var(--space-6);">
       <div class="step">
         <div class="step-num">01</div>
-        <h3>Définis ton pipeline</h3>
-        <p>Cinq statuts suffisent : Contact établi, Qualifié, Proposition envoyée, Négociation, Gagné / Perdu. Écris-les avant d'ouvrir Notion.</p>
+        <h3>Crée ta base contacts</h3>
+        <p>
+          Une base Notion avec ces propriétés : Nom, Étape commerciale (select),
+          Prochaine action (texte), Date de relance (date), E-mail.
+          N'ajoute pas de champs optionnels pour l'instant. Tu en ajouteras si tu en as besoin.
+        </p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <h3>Crée les bases et relie-les</h3>
-        <p>Une relation entre Opportunités et Contacts, une autre entre Interactions et Contacts. C'est ce qui évite de ressaisir les informations.</p>
+        <h3>Définis tes étapes commerciales</h3>
+        <p>
+          Trois valeurs suffisent : En attente de réponse, Achat confirmé, Sans suite.
+          Tu peux en ajouter si ton process en a vraiment besoin. En revanche, garde-les
+          en dessous de cinq pour que la vue Kanban reste lisible.
+        </p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <h3>Prépare les vues utiles</h3>
-        <p>Un tableau Kanban par statut, une vue « À relancer cette semaine » filtrée sur la date de relance, et une vue « Clients » filtrée sur le type.</p>
+        <h3>Crée le catalogue d'offres et relie-le</h3>
+        <p>
+          Une deuxième base avec le nom de tes offres, leurs formats et prix de référence.
+          Relie-la à ta base contacts via une relation Notion.
+          Pour chaque nouveau contact, tu sélectionnes les offres envisagées directement dans la fiche.
+        </p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
-        <h3>Ajoute des modèles de page</h3>
-        <p>Un modèle d'opportunité avec les questions de qualification (besoin, budget, délai) et un modèle de compte rendu d'appel.</p>
+        <h3>Prépare les trois vues</h3>
+        <p>
+          Vue galerie "Mes contacts" pour le répertoire global, vue tableau filtrée
+          sur la date du jour pour les relances quotidiennes, vue Kanban par
+          "Étape commerciale" pour le suivi pipeline. Rien de plus pour commencer.
+        </p>
       </div>
       <div class="step">
         <div class="step-num">05</div>
-        <h3>Installe une routine de 15 minutes</h3>
-        <p>Chaque semaine, ouvre la vue de relance, traite chaque ligne et fixe la prochaine date. C'est cette routine qui fait vivre l'outil.</p>
+        <h3>Installe la routine</h3>
+        <p>
+          Chaque semaine (ou chaque matin si tu prospectes activement), ouvre la vue
+          "À recontacter". Traite chaque ligne : mets à jour la prochaine action,
+          fixe une nouvelle date de relance. 15 minutes maximum.
+          C'est cette routine qui fait vivre l'outil, pas la structure.
+        </p>
       </div>
     </div>
-  </article>
-
-  <!-- AUTOMATISATIONS -->
-  <article class="section-wrap" style="padding-top: 0;" id="automatisations">
-    <p class="section-tag">Aller plus loin</p>
-    <h2>Les automatisations <em>qui valent le coup</em></h2>
-    <p>
-      N'automatise que ce qui te fait perdre du temps de façon répétitive. Pour le détail des niveaux,
-      lis le guide pour <a href="/automatiser-notion.html">automatiser Notion</a>.
-    </p>
-
-    <div class="deliverables" style="margin-top: var(--space-6);">
-      <article class="deliverable">
-        <div class="iconbox">🔔</div>
-        <div>
-          <h3>Relance automatique à date fixe</h3>
-          <p>Quand un statut passe à « Proposition envoyée », la date de relance se remplit à J+5.</p>
-        </div>
-      </article>
-      <article class="deliverable">
-        <div class="iconbox">📥</div>
-        <div>
-          <h3>Entrée automatique des demandes</h3>
-          <p>Un formulaire de contact crée directement un contact et une opportunité, via un outil no-code comme n8n ou Make.</p>
-        </div>
-      </article>
-      <article class="deliverable">
-        <div class="iconbox">🗂️</div>
-        <div>
-          <h3>Création du projet à la signature</h3>
-          <p>Passer une opportunité à « Gagné » génère l'espace client et les tâches de démarrage.</p>
-        </div>
-      </article>
-    </div>
-    <p style="margin-top: var(--space-6);">
-      Pour aller plus loin, découvre l'<a href="/automatisation-no-code.html">automatisation no-code</a>.
-    </p>
   </article>
 
   <!-- LIMITES -->
@@ -189,8 +292,21 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <p class="section-tag">Les limites</p>
     <h2>Notion ou CRM dédié : <em>quand changer ?</em></h2>
     <p>
-      Notion convient tant que ton volume reste raisonnable. Voici des repères pour décider.
+      Cette structure tient jusqu'à un certain volume. Voici ce qu'elle ne fait pas bien.
     </p>
+
+    <div class="probleme-block">
+      <p>
+        Une fiche contact contient une seule prochaine action et une seule date de relance.
+        Si tu as plusieurs discussions en parallèle avec la même personne pour des offres différentes,
+        tu dois choisir l'action prioritaire et noter le reste dans le corps de la fiche.
+        C'est la principale limite du modèle simple.
+      </p>
+      <p style="margin-top: var(--space-4);">
+        L'autre limite : pas d'emailing intégré ni de séquences automatiques.
+        Pour de la prospection à volume, il faudra un CRM dédié.
+      </p>
+    </div>
 
     <div class="table-wrap" style="margin-top: var(--space-6);">
       <table>
@@ -203,7 +319,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         </thead>
         <tbody>
           <tr>
-            <td>Quelques dizaines d'opportunités par an</td>
+            <td>Quelques dizaines de contacts actifs</td>
             <td data-label="Notion suffit ?">Oui</td>
             <td data-label="Alternative">Rester sur Notion</td>
           </tr>
@@ -213,15 +329,15 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
             <td data-label="Alternative">CRM dédié avec emailing intégré</td>
           </tr>
           <tr>
-            <td>Équipe commerciale de plusieurs personnes</td>
-            <td data-label="Notion suffit ?">Selon la rigueur</td>
-            <td data-label="Alternative">CRM avec droits et reporting avancés</td>
+            <td>Plusieurs discussions parallèles par contact</td>
+            <td data-label="Notion suffit ?">Limite</td>
+            <td data-label="Alternative">Ajouter une base Opportunités</td>
           </tr>
         </tbody>
       </table>
     </div>
     <p style="margin-top: var(--space-6);">
-      Le CRM s'intègre idéalement dans un espace plus large : voir
+      Ce CRM s'intègre idéalement dans un espace de pilotage plus large : voir
       <a href="/notion-freelance.html">Notion pour freelance</a> et
       <a href="/centraliser-son-organisation.html">centraliser son organisation</a>.
     </p>
@@ -231,7 +347,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
   <article class="section-wrap" style="padding-top: 0;">
     <aside class="quote">
       <strong>« Mieux vaut un CRM simple mis à jour chaque semaine qu'un système parfait abandonné au bout d'un mois. »</strong>
-      <p>Le principe que je suis pour chaque espace Notion construit sur-mesure.</p>
+      <p>Le principe que j'applique pour chaque espace Notion construit sur-mesure.</p>
     </aside>
   </article>
 
@@ -243,11 +359,11 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <div class="faq-grid">
       <details class="faq-item">
         <summary>Notion peut-il vraiment remplacer un CRM ?</summary>
-        <p>Pour un freelance ou une petite structure, oui : bases reliées, vues et automatisations couvrent l'essentiel. Il montre ses limites pour l'emailing de masse ou les grosses équipes commerciales.</p>
+        <p>Pour un freelance ou une petite structure avec quelques dizaines de contacts actifs, oui. Il montre ses limites pour l'emailing de masse, les séquences automatiques ou quand plusieurs opportunités coexistent pour le même contact.</p>
       </details>
       <details class="faq-item">
         <summary>Combien de temps faut-il pour créer son CRM Notion ?</summary>
-        <p>Une première version utilisable se monte en une demi-journée. Prévois ensuite quelques ajustements sur les premières semaines, une fois que tu l'utilises en conditions réelles.</p>
+        <p>Une première version utilisable se monte en une demi-journée. Prévois quelques ajustements sur les premières semaines, une fois que tu l'utilises en conditions réelles.</p>
       </details>
       <details class="faq-item">
         <summary>Faut-il un abonnement Notion payant ?</summary>
@@ -255,7 +371,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
       </details>
       <details class="faq-item">
         <summary>Comment éviter que le CRM ne soit plus mis à jour ?</summary>
-        <p>Limite les champs obligatoires, garde une seule vue de travail hebdomadaire et fixe une routine de 15 minutes. Moins il y a de saisie, plus il reste vivant.</p>
+        <p>Limite les champs à ce qui est vraiment utile, garde une seule vue de travail quotidienne et fixe une routine de 15 minutes. Moins il y a de saisie, plus il reste vivant.</p>
       </details>
     </div>
   </article>
@@ -266,8 +382,9 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <h2>CRM Notion, <em>en résumé</em></h2>
     <div class="intro-card">
       <p>
-        <strong>Trois bases reliées, cinq statuts et une routine hebdomadaire suffisent à structurer ta prospection.</strong>
-        Commence simple, automatise seulement ce qui te pèse, et change d'outil uniquement si ton volume l'exige.
+        Deux bases (contacts + catalogue d'offres), trois vues (galerie, relances du jour, Kanban pipeline)
+        et une routine hebdomadaire de 15 minutes suffisent à structurer ta prospection.
+        Commence simple. Ajoute seulement ce que l'usage réel réclame.
       </p>
     </div>
   </article>
@@ -347,12 +464,12 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     {
       "@type": "Question",
       "name": "Notion peut-il vraiment remplacer un CRM ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pour un freelance ou une petite structure, oui : bases reliées, vues et automatisations couvrent l'essentiel. Il montre ses limites pour l'emailing de masse ou les grosses équipes commerciales." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pour un freelance ou une petite structure avec quelques dizaines de contacts actifs, oui. Il montre ses limites pour l'emailing de masse, les séquences automatiques ou quand plusieurs opportunités coexistent pour le même contact." }
     },
     {
       "@type": "Question",
       "name": "Combien de temps faut-il pour créer son CRM Notion ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Une première version utilisable se monte en une demi-journée. Prévois ensuite quelques ajustements sur les premières semaines, une fois que tu l'utilises en conditions réelles." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Une première version utilisable se monte en une demi-journée. Prévois quelques ajustements sur les premières semaines, une fois que tu l'utilises en conditions réelles." }
     },
     {
       "@type": "Question",
@@ -362,7 +479,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     {
       "@type": "Question",
       "name": "Comment éviter que le CRM ne soit plus mis à jour ?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Limite les champs obligatoires, garde une seule vue de travail hebdomadaire et fixe une routine de 15 minutes. Moins il y a de saisie, plus il reste vivant." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Limite les champs à ce qui est vraiment utile, garde une seule vue de travail quotidienne et fixe une routine de 15 minutes. Moins il y a de saisie, plus il reste vivant." }
     }
   ]
 }
@@ -380,4 +497,4 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
 }
 </script>
 
-<!-- CLUSTER: Notion RESUME: Créer un CRM Notion simple pour freelance : bases, pipeline, relances, automatisations et limites. -->
+<!-- CLUSTER: Notion RESUME: Créer un CRM Notion simple pour freelance : deux bases, trois vues, pipeline relances et catalogue d'offres. -->
