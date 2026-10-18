@@ -3,7 +3,7 @@ layout: base.njk
 permalink: /crm-notion-freelance.html
 pageTitle: "CRM Notion pour freelance : le créer en 5 étapes simples"
 title: "CRM Notion pour freelance : comment créer le sien, étape par étape"
-description: "CRM Notion pour freelance : structure des bases, pipeline, vues de relance et automatisations. Un guide pas à pas pour suivre tes prospects sans usine à gaz."
+description: "CRM Notion pour freelance : trois bases reliées (contacts, offres, ventes), trois vues de relance et pipeline. Un guide pour suivre tes prospects et tes accompagnements sans usine à gaz."
 ---
 <main>
 
@@ -33,16 +33,15 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
 
     <div class="intro-card">
       <p>
-        Un CRM Notion, c'est une base de données qui centralise tes contacts,
-        leur statut commercial et la prochaine action à faire, pour que tu saches
-        toujours qui relancer, quand, et pourquoi. Pas besoin d'un logiciel dédié :
-        pour un freelance avec quelques dizaines de contacts actifs, deux bases
-        Notion suffisent à tenir un suivi sérieux.
+        Un CRM Notion, c'est un ensemble de bases de données qui centralise tes contacts,
+        leurs offres envisagées, leur statut commercial et la prochaine action à faire.
+        Pas besoin d'un logiciel dédié : pour un freelance avec quelques dizaines de contacts
+        actifs, trois bases Notion suffisent à tenir un suivi sérieux.
       </p>
       <p>
-        La version que j'utilise se construit autour d'un principe simple :
-        une fiche = un contact + une prochaine action + une date de relance.
-        Pas de table d'interactions, pas de base d'opportunités séparée.
+        La version que j'utilise tient sur trois bases reliées : les contacts et relances,
+        le catalogue d'offres, et le suivi des ventes confirmées.
+        Une fiche contact = une personne, une prochaine action, une date de relance.
       </p>
       <div class="highlight-quote">
         Un bon CRM de freelance n'est pas le plus complet : c'est celui que tu ouvres vraiment chaque semaine.
@@ -78,10 +77,11 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
   <!-- STRUCTURE -->
   <article class="section-wrap" style="padding-top: 0;" id="structure">
     <p class="section-tag">La structure</p>
-    <h2>Deux bases. Pas <em>trois</em></h2>
+    <h2>Trois bases. Pas <em>plus</em>.</h2>
     <p>
-      La plupart des tutos CRM Notion te parlent de trois tables : Contacts, Opportunités, Interactions.
-      Dans la pratique, c'est trop lourd à maintenir seul. La structure que j'utilise tient sur deux bases.
+      La plupart des tutos CRM Notion te parlent d'une seule table fourre-tout ou, à l'opposé,
+      d'architectures à cinq bases. Dans la pratique, trois bases reliées couvrent l'essentiel
+      sans alourdir la saisie.
     </p>
 
     <div class="table-wrap" style="margin-top: var(--space-6);">
@@ -97,12 +97,17 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
           <tr>
             <td>Contacts et relances</td>
             <td data-label="Rôle">Une fiche par personne, avec tout le suivi commercial</td>
-            <td data-label="Propriétés clés">Nom, Étape commerciale, Offres envisagées, Prochaine action, Date de relance, E-mail</td>
+            <td data-label="Propriétés clés">Nom, Étape commerciale, Offres envisagées (R), Prochaine action, Date de relance, E-mail, Type de contact</td>
           </tr>
           <tr>
             <td>Catalogue des offres</td>
             <td data-label="Rôle">Liste tes offres avec leurs prix et formats</td>
             <td data-label="Propriétés clés">Nom, Prix de référence, Format, Durée, Périmètre</td>
+          </tr>
+          <tr>
+            <td>Suivi des ventes</td>
+            <td data-label="Rôle">Une ligne par achat confirmé, reliée au contact et à l'offre</td>
+            <td data-label="Propriétés clés">Montant, Date de vente, Période d'accompagnement, État, Contact (R), Offre (R)</td>
           </tr>
         </tbody>
       </table>
@@ -110,19 +115,21 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
 
     <p style="margin-top: var(--space-6);">
       L'étape commerciale est une propriété "select" de chaque fiche contact.
-      Trois valeurs suffisent pour démarrer : <strong>En attente de réponse</strong>,
+      Quelques valeurs suffisent pour démarrer : <strong>À contacter</strong>,
+      <strong>Échange en cours</strong>, <strong>En attente de réponse</strong>,
       <strong>Achat confirmé</strong>, <strong>Sans suite</strong>.
       C'est ce champ qui alimente la vue Kanban et te permet de voir ton pipeline d'un coup d'oeil.
+      Quand un contact passe à "Achat confirmé", tu ouvres une fiche dans la base Suivi des ventes.
     </p>
 
     <figure style="margin-top: var(--space-6);">
       <img
         src="/images/crm-notion-mes-contacts.jpg"
-        alt="Vue galerie de la base contacts dans Notion — deux fiches contact avec étape commerciale et prochaine action"
+        alt="Vue galerie de la base contacts dans Notion — deux fiches contact avec étape commerciale, offres envisagées et prochaine action"
         style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
         loading="lazy"
-        width="1484"
-        height="812"
+        width="1568"
+        height="426"
       />
       <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
         La vue galerie "Mes contacts" — chaque fiche affiche l'étape commerciale, les offres envisagées et la prochaine action.
@@ -165,9 +172,8 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         <div class="step-num">03</div>
         <h3>Discussions en cours (vue Kanban)</h3>
         <p>
-          Vue pipeline par étape commerciale. Chaque colonne correspond à un statut :
-          En attente de réponse, Achat confirmé, Sans suite.
-          Tu vois en un coup d'oeil où en est chaque discussion.
+          Vue pipeline par étape commerciale. Chaque colonne correspond à un statut.
+          Tu vois en un coup d'oeil où en est chaque discussion et ce qui attend une réponse.
         </p>
       </div>
     </div>
@@ -175,28 +181,28 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <figure style="margin-top: var(--space-6);">
       <img
         src="/images/crm-notion-a-recontacter.jpg"
-        alt="Vue tableau des contacts à recontacter dans Notion — colonnes Étape commerciale, Prochaine action, Date de relance"
+        alt="Vue tableau des contacts à recontacter dans Notion — colonnes Nom, Date de relance, E-mail, Offres envisagées, Prochaine action"
         style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
         loading="lazy"
-        width="1484"
-        height="812"
+        width="1568"
+        height="231"
       />
       <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
-        La vue "À recontacter — journée exemple" : tableau filtré sur la date du jour, avec l'étape et la prochaine action visibles directement.
+        La vue "Mes relances" : tableau filtré sur la date du jour, avec l'étape et la prochaine action visibles directement.
       </figcaption>
     </figure>
 
     <figure style="margin-top: var(--space-6);">
       <img
         src="/images/crm-notion-discussions.jpg"
-        alt="Vue Kanban des discussions en cours dans Notion — colonnes par étape commerciale"
+        alt="Vue Kanban des discussions en cours dans Notion — colonnes par étape commerciale : Achat confirmé, En attente de réponse, Sans suite"
         style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
         loading="lazy"
-        width="1484"
-        height="812"
+        width="1568"
+        height="305"
       />
       <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
-        La vue "Discussions en cours" : Kanban par étape commerciale. Ici, Louise Morel est en attente de réponse depuis le 17 octobre.
+        La vue "Discussions en cours" : Kanban par étape commerciale. Louise Morel est en attente de réponse.
       </figcaption>
     </figure>
   </article>
@@ -211,7 +217,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
       Ça te donne une référence commune et évite les variations de nom d'une fiche à l'autre.
     </p>
     <p style="margin-top: var(--space-4);">
-      Le catalogue contient le nom de chaque offre, un prix de référence (fictif dans la démo),
+      Le catalogue contient le nom de chaque offre, un prix de référence,
       le format (individuel, accompagnement), la durée et le périmètre. Le montant retenu
       au moment de la vente se renseigne dans la fiche de vente, pas dans le catalogue.
     </p>
@@ -222,8 +228,8 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         alt="Base catalogue des offres dans Notion — tableau avec nom, prix de référence, format, durée et périmètre"
         style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
         loading="lazy"
-        width="1484"
-        height="812"
+        width="1568"
+        height="259"
       />
       <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
         Le catalogue des offres — deux offres de démo : Séance Clarté (60 minutes, individuelle) et Cap Sérénité (8 semaines, accompagnement).
@@ -231,10 +237,41 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     </figure>
   </article>
 
+  <!-- SUIVI DES VENTES -->
+  <article class="section-wrap" style="padding-top: 0;" id="ventes">
+    <p class="section-tag">La troisième base</p>
+    <h2>Le suivi des ventes, <em>séparé</em></h2>
+    <p>
+      Quand un contact passe à l'achat, une fiche de vente s'ouvre dans la base Suivi des ventes.
+      Elle est reliée au contact et à l'offre choisie. Ce n'est pas là que tu gères les relances,
+      ça reste dans la fiche contact, mais là que tu suis ce qui est confirmé : le montant,
+      les dates d'accompagnement, l'état du suivi.
+    </p>
+    <p style="margin-top: var(--space-4);">
+      Trois vues structurent le pilotage : par achat confirmé, par cliente, par offre.
+      C'est utile pour voir d'un coup d'oeil ce qui est en cours ou à venir,
+      et pour avoir une estimation du chiffre d'affaires sans chercher dans tes mails.
+    </p>
+
+    <figure style="margin-top: var(--space-6);">
+      <img
+        src="/images/crm-notion-ventes.jpg"
+        alt="Base suivi des ventes dans Notion — tableau avec colonnes Montant, Date de vente, Période d'accompagnement, État, Contact et Offre liés"
+        style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border, #e5e7eb);"
+        loading="lazy"
+        width="1568"
+        height="326"
+      />
+      <figcaption style="margin-top: var(--space-2); font-size: 0.875rem; color: var(--color-muted, #6b7280);">
+        La base "Ventes & Accompagnements" — chaque ligne correspond à un achat confirmé, reliée au contact et à l'offre.
+      </figcaption>
+    </figure>
+  </article>
+
   <!-- ETAPES -->
   <article class="section-wrap" style="padding-top: 0;" id="etapes">
     <p class="section-tag">Pas à pas</p>
-    <h2>Monter son CRM Notion <em>en 5 étapes</em></h2>
+    <h2>Monter son CRM Notion <em>en 6 étapes</em></h2>
     <p>Compte une demi-journée pour une première version utilisable.</p>
 
     <div class="steps" style="margin-top: var(--space-6);">
@@ -243,7 +280,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         <h3>Crée ta base contacts</h3>
         <p>
           Une base Notion avec ces propriétés : Nom, Étape commerciale (select),
-          Prochaine action (texte), Date de relance (date), E-mail.
+          Prochaine action (texte), Date de relance (date), E-mail, Type de contact (select).
           N'ajoute pas de champs optionnels pour l'instant. Tu en ajouteras si tu en as besoin.
         </p>
       </div>
@@ -251,9 +288,9 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         <div class="step-num">02</div>
         <h3>Définis tes étapes commerciales</h3>
         <p>
-          Trois valeurs suffisent : En attente de réponse, Achat confirmé, Sans suite.
-          Tu peux en ajouter si ton process en a vraiment besoin. En revanche, garde-les
-          en dessous de cinq pour que la vue Kanban reste lisible.
+          Quelques valeurs suffisent : À contacter, Échange en cours, En attente de réponse,
+          Achat confirmé, Sans suite. Garde-les en dessous de six pour que la vue Kanban
+          reste lisible. Tu peux en ajouter si ton process en a vraiment besoin.
         </p>
       </div>
       <div class="step">
@@ -267,15 +304,26 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
       </div>
       <div class="step">
         <div class="step-num">04</div>
-        <h3>Prépare les trois vues</h3>
+        <h3>Crée la base de suivi des ventes</h3>
         <p>
-          Vue galerie "Mes contacts" pour le répertoire global, vue tableau filtrée
-          sur la date du jour pour les relances quotidiennes, vue Kanban par
-          "Étape commerciale" pour le suivi pipeline. Rien de plus pour commencer.
+          Une troisième base avec les propriétés : Nom, Montant, Date de vente, Période
+          d'accompagnement, État de l'accompagnement. Relie-la à la base contacts et à
+          la base offres. Quand un achat est confirmé, tu crées une fiche ici plutôt que
+          de tout noter dans la fiche contact.
         </p>
       </div>
       <div class="step">
         <div class="step-num">05</div>
+        <h3>Prépare les vues</h3>
+        <p>
+          Sur la base contacts : vue galerie "Mes contacts" pour le répertoire global,
+          vue tableau filtrée sur la date du jour pour les relances quotidiennes,
+          vue Kanban par "Étape commerciale" pour le suivi pipeline. Sur la base ventes :
+          une vue par achat confirmé, une par cliente, une par offre.
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">06</div>
         <h3>Installe la routine</h3>
         <p>
           Chaque semaine (ou chaque matin si tu prospectes activement), ouvre la vue
@@ -300,7 +348,7 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
         Une fiche contact contient une seule prochaine action et une seule date de relance.
         Si tu as plusieurs discussions en parallèle avec la même personne pour des offres différentes,
         tu dois choisir l'action prioritaire et noter le reste dans le corps de la fiche.
-        C'est la principale limite du modèle simple.
+        C'est la principale limite du modèle.
       </p>
       <p style="margin-top: var(--space-4);">
         L'autre limite : pas d'emailing intégré ni de séquences automatiques.
@@ -382,9 +430,9 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
     <h2>CRM Notion, <em>en résumé</em></h2>
     <div class="intro-card">
       <p>
-        Deux bases (contacts + catalogue d'offres), trois vues (galerie, relances du jour, Kanban pipeline)
-        et une routine hebdomadaire de 15 minutes suffisent à structurer ta prospection.
-        Commence simple. Ajoute seulement ce que l'usage réel réclame.
+        Trois bases reliées (contacts + catalogue d'offres + suivi des ventes), trois vues sur la base contacts
+        (galerie, relances du jour, Kanban pipeline) et une routine hebdomadaire de 15 minutes suffisent
+        à structurer ta prospection et ton suivi client. Commence simple. Ajoute seulement ce que l'usage réel réclame.
       </p>
     </div>
   </article>
@@ -438,11 +486,11 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "CRM Notion pour freelance : comment créer le sien, étape par étape",
-  "description": "CRM Notion pour freelance : structure des bases, pipeline, vues de relance et automatisations. Un guide pas à pas pour suivre tes prospects sans usine à gaz.",
+  "description": "CRM Notion pour freelance : trois bases reliées (contacts, offres, ventes), trois vues de relance et pipeline. Un guide pour suivre tes prospects et tes accompagnements sans usine à gaz.",
   "url": "https://assistbyalicia.fr/crm-notion-freelance.html",
   "inLanguage": "fr",
   "datePublished": "2026-10-17",
-  "dateModified": "2026-10-17",
+  "dateModified": "2026-10-18",
   "author": {
     "@type": "Person",
     "name": "Alicia",
@@ -497,4 +545,4 @@ description: "CRM Notion pour freelance : structure des bases, pipeline, vues de
 }
 </script>
 
-<!-- CLUSTER: Notion RESUME: Créer un CRM Notion simple pour freelance : deux bases, trois vues, pipeline relances et catalogue d'offres. -->
+<!-- CLUSTER: Notion RESUME: Créer un CRM Notion simple pour freelance : trois bases reliées (contacts, offres, ventes), trois vues de relance et pipeline. -->
