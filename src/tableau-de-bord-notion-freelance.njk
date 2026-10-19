@@ -1,0 +1,363 @@
+---
+layout: base.njk
+permalink: /tableau-de-bord-notion-freelance.html
+pageTitle: "Tableau de bord Notion freelance : guide pas à pas"
+title: "Tableau de bord Notion pour freelance : le construire pas à pas"
+description: "Tableau de bord Notion pour freelance : les 5 blocs utiles, les bases à relier et les erreurs à éviter pour piloter ton activité sans usine à gaz."
+---
+<main>
+
+  <!-- HERO ----------------------------------------------------------------->
+  <section class="hero">
+    <p class="hero-eyebrow">Notion · Freelance · Organisation</p>
+    <h1>
+      Un <span>tableau de bord Notion</span> pour freelance :
+      voir l'essentiel <em>sans tout ouvrir</em>
+    </h1>
+    <p class="hero-sub">
+      Clients, projets, tâches, relances : quand tout est dans Notion mais que tu
+      ne sais pas par où commencer chaque matin, il manque une page d'accueil.
+      Voici comment la construire simplement, sans usine à gaz.
+    </p>
+    <div class="hero-pills">
+      <span class="pill">Freelance</span>
+      <span class="pill accent">Tableau de bord Notion</span>
+      <span class="pill">Bases reliées</span>
+      <span class="pill">Vues filtrées</span>
+    </div>
+  </section>
+
+  <!-- DE QUOI PARLE-T-ON ? ------------------------------------------------->
+  <article class="section-wrap">
+    <p class="section-tag">De quoi parle-t-on ?</p>
+    <h2>C'est quoi un <em>tableau de bord</em> dans Notion ?</h2>
+
+    <div class="intro-card">
+      <p>
+        <strong>Un tableau de bord Notion</strong>, c'est une page d'accueil qui
+        rassemble des vues de tes bases de données (tâches, projets, contacts)
+        pour afficher uniquement ce qui compte aujourd'hui. Il ne contient pas
+        les informations : il les montre, filtrées, depuis leurs bases d'origine.
+      </p>
+      <p>
+        <strong>En bref :</strong> tu vas voir quels blocs mettre sur ta page,
+        quelles bases préparer en amont, comment les construire étape par étape
+        et quelles erreurs rendent un tableau de bord inutilisable au bout de
+        quelques semaines.
+      </p>
+      <div class="highlight-quote">
+        Un bon tableau de bord répond à une seule question : qu'est-ce que je fais maintenant ?
+      </div>
+    </div>
+  </article>
+
+  <!-- PRÉREQUIS ------------------------------------------------------------>
+  <article class="section-wrap" style="padding-top: 0;" id="prerequis">
+    <p class="section-tag">Avant de construire</p>
+    <h2>Un tableau de bord n'est <em>aussi bon que ses bases</em></h2>
+    <p>
+      Avant de dessiner la page d'accueil, il faut que les informations soient
+      rangées au bon endroit. Trois bases reliées entre elles couvrent la plupart
+      des activités indépendantes :
+    </p>
+
+    <div class="grid-3" style="margin-top: var(--space-6);">
+      <div class="card">
+        <h3>Contacts</h3>
+        <p>Une fiche par personne ou structure : statut, prochaine action, date de relance. C'est le principe d'un <a href="/crm-notion-freelance.html">CRM Notion simple</a>.</p>
+      </div>
+      <div class="card">
+        <h3>Projets</h3>
+        <p>Une fiche par mission, reliée au contact concerné, avec un statut et une échéance.</p>
+      </div>
+      <div class="card">
+        <h3>Tâches</h3>
+        <p>Une ligne par action, reliée à un projet, avec une date et un statut. C'est elle qui nourrit le « quoi faire maintenant ».</p>
+      </div>
+    </div>
+    <p style="margin-top: var(--space-6);">
+      Si tes informations sont encore éparpillées, commence par
+      <a href="/centraliser-son-organisation.html">centraliser ton organisation</a>
+      : le tableau de bord viendra ensuite, beaucoup plus vite.
+    </p>
+  </article>
+
+  <!-- BLOCS UTILES ---------------------------------------------------------->
+  <article class="section-wrap" style="padding-top: 0;" id="blocs">
+    <p class="section-tag">Le contenu</p>
+    <h2>Les blocs <em>qui servent vraiment</em></h2>
+    <p>
+      Pas besoin de dix widgets. Voici les blocs qui reviennent le plus souvent
+      dans un tableau de bord de freelance. Garde ceux qui répondent à un vrai besoin.
+    </p>
+
+    <div class="table-wrap" style="margin-top: var(--space-6);">
+      <table>
+        <thead>
+          <tr>
+            <th>Bloc</th>
+            <th>Source</th>
+            <th>Filtre conseillé</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mes tâches du jour</td>
+            <td data-label="Source">Base Tâches</td>
+            <td data-label="Filtre conseillé">Date = aujourd'hui ou en retard, statut ≠ terminé</td>
+          </tr>
+          <tr>
+            <td>Projets en cours</td>
+            <td data-label="Source">Base Projets</td>
+            <td data-label="Filtre conseillé">Statut = en cours, trié par échéance</td>
+          </tr>
+          <tr>
+            <td>Relances à faire</td>
+            <td data-label="Source">Base Contacts</td>
+            <td data-label="Filtre conseillé">Date de relance ≤ aujourd'hui</td>
+          </tr>
+          <tr>
+            <td>Boîte de capture</td>
+            <td data-label="Source">Base Tâches</td>
+            <td data-label="Filtre conseillé">Statut = à trier</td>
+          </tr>
+          <tr>
+            <td>Raccourcis</td>
+            <td data-label="Source">Liens</td>
+            <td data-label="Filtre conseillé">Les 3 à 5 pages que tu ouvres le plus</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </article>
+
+  <!-- ÉTAPES ---------------------------------------------------------------->
+  <article class="section-wrap" style="padding-top: 0;" id="etapes">
+    <p class="section-tag">Pas à pas</p>
+    <h2>Construire ton tableau de bord <em>en 5 étapes</em></h2>
+    <p>Compte une petite demi-journée si tes bases existent déjà.</p>
+
+    <div class="steps" style="margin-top: var(--space-6);">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Crée une page vide « Accueil »</h3>
+        <p>Une page simple, sans base de données dedans. Elle sera ta page d'ouverture dans Notion.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Ajoute une vue liée par bloc</h3>
+        <p>Tape /vue liée de base de données, choisis la base source (Tâches, Projets ou Contacts), puis donne-lui un nom clair comme « Aujourd'hui ».</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Filtre et trie chaque vue</h3>
+        <p>Applique le filtre du tableau ci-dessus, masque les propriétés inutiles et limite l'affichage à quelques lignes.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Organise la page en colonnes</h3>
+        <p>Place le plus urgent (tâches du jour, relances) en haut et à gauche, et les blocs de consultation plus bas.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">05</div>
+        <h3>Teste une semaine, puis élague</h3>
+        <p>Note ce que tu n'ouvres jamais et supprime-le. Un tableau de bord se fait vivre : il s'ajuste à l'usage réel.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- ERREURS --------------------------------------------------------------->
+  <article class="section-wrap" style="padding-top: 0;" id="erreurs">
+    <p class="section-tag">À éviter</p>
+    <h2>Les erreurs qui <em>rendent la page inutilisable</em></h2>
+    <p>Ce sont les causes les plus fréquentes d'un tableau de bord abandonné après quelques semaines.</p>
+
+    <div class="deliverables" style="margin-top: var(--space-6);">
+      <article class="deliverable">
+        <div class="iconbox">🧱</div>
+        <div>
+          <h3>Tout afficher</h3>
+          <p>Une vue sans filtre recrée le désordre que tu cherchais à fuir. Chaque bloc doit répondre à une question précise.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">🧩</div>
+        <div>
+          <h3>Empiler les bases trop tôt</h3>
+          <p>Commence avec trois bases. Ajouter facturation, contenus ou finances n'a de sens que lorsque le besoin est réel.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">🔁</div>
+        <div>
+          <h3>Saisir deux fois la même information</h3>
+          <p>Si une donnée existe déjà dans une base, relie-la au lieu de la recopier : une seule source de vérité.</p>
+        </div>
+      </article>
+      <article class="deliverable">
+        <div class="iconbox">🤖</div>
+        <div>
+          <h3>Automatiser avant de stabiliser</h3>
+          <p>Attends que ton fonctionnement soit clair avant d'ajouter des <a href="/automatiser-notion.html">automatisations</a> : elles figent aussi les défauts.</p>
+        </div>
+      </article>
+    </div>
+  </article>
+
+  <!-- CITATION -------------------------------------------------------------->
+  <article class="section-wrap" style="padding-top: 0;">
+    <aside class="quote">
+      <strong>« Mieux vaut trois blocs que tu consultes chaque jour que dix que tu n'ouvres jamais. »</strong>
+      <p>Le critère de départ : garder uniquement ce qui t'aide à décider quoi faire ensuite.</p>
+    </aside>
+  </article>
+
+  <!-- FAQ ------------------------------------------------------------------->
+  <article class="section-wrap" style="padding-top: 0;" id="faq">
+    <p class="section-tag">Questions fréquentes</p>
+    <h2>Ce qu'on se demande sur <span>le tableau de bord Notion</span></h2>
+
+    <div class="faq-grid">
+      <details class="faq-item">
+        <summary>Qu'est-ce qu'un tableau de bord Notion ?</summary>
+        <p>C'est une page d'accueil qui affiche, à partir de tes bases de données (clients, projets, tâches), uniquement ce qui demande ton attention maintenant : tâches du jour, projets en cours, relances à faire. Il ne stocke rien lui-même, il montre des vues filtrées.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Faut-il un template ou le construire soi-même ?</summary>
+        <p>Un template fait gagner du temps au départ, mais il est pensé pour un fonctionnement générique. Si ton activité a des particularités, mieux vaut partir d'une base simple et l'ajuster à ta façon de travailler, ou te faire accompagner pour un système sur-mesure.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Combien de bases de données faut-il pour commencer ?</summary>
+        <p>Trois suffisent : contacts ou clients, projets, tâches. Tu peux en ajouter plus tard (facturation, contenus) quand le besoin est réel, pas avant.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Pourquoi mon tableau de bord Notion devient-il vite illisible ?</summary>
+        <p>En général parce qu'on y affiche tout. Un tableau de bord utile limite chaque vue à quelques lignes filtrées (échéance proche, statut en cours) et renvoie le reste vers les bases complètes.</p>
+      </details>
+    </div>
+  </article>
+
+  <!-- À RETENIR -------------------------------------------------------------->
+  <article class="section-wrap" style="padding-top: 0;">
+    <p class="section-tag">À retenir</p>
+    <h2>Tableau de bord Notion, <em>en résumé</em></h2>
+    <div class="intro-card">
+      <p>
+        <strong>Un tableau de bord Notion est une page de vues filtrées, alimentée par des bases bien rangées.</strong>
+        Prépare trois bases reliées, ajoute quelques blocs utiles, teste une semaine puis élague.
+        Pour aller plus loin sur le choix de l'outil, consulte aussi
+        <a href="/notion-freelance.html">Notion pour freelance</a>.
+      </p>
+    </div>
+  </article>
+
+
+  <!-- CTA FINALE ----------------------------------------------------------->
+  <section class="cta-section" aria-labelledby="cta-h2">
+    <p class="section-tag">Aller plus loin</p>
+    <h2 id="cta-h2">Tu veux un tableau de bord Notion adapté à ton activité ?</h2>
+    <p>
+      Un système sur-mesure part de ton fonctionnement réel, pas d'un template générique.
+      Un appel gratuit de 30 min permet de voir ce qui est le plus utile pour toi.
+    </p>
+    <div class="btns">
+      <a href="https://calendar.notion.so/meet/aliciachouquet/30min"
+         class="btn-primary" target="_blank" rel="noopener noreferrer">
+        Réserver un appel diagnostic
+      </a>
+      <a href="/creation-espace-notion-sur-mesure.html" class="btn-secondary">
+        Découvrir la création d'espace Notion sur-mesure
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- SCRIPT MENU MOBILE — NE PAS MODIFIER ---------------------------------->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      });
+    });
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Tableau de bord Notion pour freelance : le construire pas à pas",
+  "description": "Tableau de bord Notion pour freelance : les 5 blocs utiles, les bases à relier et les erreurs à éviter pour piloter ton activité sans usine à gaz.",
+  "url": "https://assistbyalicia.fr/tableau-de-bord-notion-freelance.html",
+  "inLanguage": "fr",
+  "datePublished": "2026-10-19",
+  "dateModified": "2026-10-19",
+  "author": {
+    "@type": "Person",
+    "name": "Alicia",
+    "url": "https://assistbyalicia.fr/qui-suis-je.html"
+  },
+  "publisher": {
+    "@type": "ProfessionalService",
+    "name": "Assist by Alicia",
+    "url": "https://assistbyalicia.fr/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce qu'un tableau de bord Notion ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "C'est une page d'accueil qui affiche, à partir de tes bases de données (clients, projets, tâches), uniquement ce qui demande ton attention maintenant : tâches du jour, projets en cours, relances à faire. Il ne stocke rien lui-même, il montre des vues filtrées." }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il un template ou le construire soi-même ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un template fait gagner du temps au départ, mais il est pensé pour un fonctionnement générique. Si ton activité a des particularités, mieux vaut partir d'une base simple et l'ajuster à ta façon de travailler, ou te faire accompagner pour un système sur-mesure." }
+    },
+    {
+      "@type": "Question",
+      "name": "Combien de bases de données faut-il pour commencer ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Trois suffisent : contacts ou clients, projets, tâches. Tu peux en ajouter plus tard (facturation, contenus) quand le besoin est réel, pas avant." }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi mon tableau de bord Notion devient-il vite illisible ?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En général parce qu'on y affiche tout. Un tableau de bord utile limite chaque vue à quelques lignes filtrées (échéance proche, statut en cours) et renvoie le reste vers les bases complètes." }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://assistbyalicia.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Ressources", "item": "https://assistbyalicia.fr/ressources.html" },
+    { "@type": "ListItem", "position": 3, "name": "Tableau de bord Notion pour freelance", "item": "https://assistbyalicia.fr/tableau-de-bord-notion-freelance.html" }
+  ]
+}
+</script>
+<!-- CLUSTER: Notion RESUME: Construire un tableau de bord Notion pour freelance : bases à relier, blocs utiles, étapes et erreurs à éviter. -->
