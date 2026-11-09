@@ -18,26 +18,32 @@ description: "Toutes les ressources pour structurer ton activité avec Notion, a
     </p>
   </section>
 
-  {% for cluster in ressources.clusters %}
-  <article class="section-wrap" style="{% if not loop.first %}padding-top: 0;{% endif %}">
+  {% macro pilierCard(cluster) %}
+  <div class="card">
     <p class="section-tag">{{ cluster.tag }}</p>
-    <h2>{{ cluster.nom }}</h2>
+    <h3>{{ cluster.nom }}</h3>
     <p>{{ cluster.intro }}</p>
-
-    <div class="grid-3">
+    <ul>
       {% for page in cluster.pages %}
-        {% if page.statut == "en-ligne" and loop.index <= 4 %}
-        <div class="card">
-          <h3><a href="{{ page.url }}">{{ page.titre }}</a></h3>
-          <p>{{ page.resume }}</p>
-        </div>
+        {% if page.statut == "en-ligne" and loop.index <= 2 %}
+        <li><a href="{{ page.url }}">{{ page.titre }}</a></li>
         {% endif %}
       {% endfor %}
-    </div>
+    </ul>
+    <p style="margin-top: var(--space-6);"><a href="/ressources-{{ cluster.slug }}.html" class="btn-secondary">Voir tous les articles</a></p>
+  </div>
+  {% endmacro %}
 
-    <p style="margin-top: var(--space-6);"><a href="/ressources-{{ cluster.slug }}.html" class="btn-secondary">Voir tous les articles : {{ cluster.nom }}</a></p>
+  <article class="section-wrap" style="padding-top: 0;">
+    <div class="grid-2 contact-grid">
+      {{ pilierCard(ressources.clusters[0]) }}
+      {{ pilierCard(ressources.clusters[1]) }}
+    </div>
+    <div class="grid-2 contact-grid">
+      {{ pilierCard(ressources.clusters[2]) }}
+      {{ pilierCard(ressources.clusters[3]) }}
+    </div>
   </article>
-  {% endfor %}
 
   {% if ressources.hors_cluster %}
   <article class="section-wrap" style="padding-top: 0;">
