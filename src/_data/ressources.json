@@ -40,7 +40,9 @@
           "resume": "Construire un tableau de bord Notion pour freelance : bases à relier, blocs utiles, étapes et erreurs à éviter.",
           "statut": "en-ligne"
         }
-      ]
+      ],
+      "slug": "notion",
+      "intro": "Construire et faire vivre un espace Notion qui centralise ton activité : clients, projets, tâches et finances."
     },
     {
       "nom": "Automatisation",
@@ -64,7 +66,9 @@
           "resume": "Automatiser les process qui impliquent plusieurs personnes dans ton équipe.",
           "statut": "en-ligne"
         }
-      ]
+      ],
+      "slug": "automatisation",
+      "intro": "Automatiser les tâches répétitives, seul ou en équipe, sans coder ou avec des outils accessibles."
     },
     {
       "nom": "Assistance & organisation",
@@ -105,11 +109,21 @@
           "url": "/choisir-les-taches-a-deleguer.html",
           "resume": "Inventaire, priorisation, analyse du temps et process : la méthode pour déléguer les bonnes tâches.",
           "statut": "en-ligne"
-        },
+        }
+      ],
+      "slug": "organisation",
+      "intro": "Reprendre le contrôle de ton temps : identifier ce qui bloque, choisir tes outils et déléguer les bonnes tâches."
+    },
+    {
+      "nom": "Intelligence artificielle",
+      "slug": "intelligence-artificielle",
+      "tag": "Piloter ton activité avec l'IA",
+      "intro": "Utiliser l'IA pour préparer ton pilotage et analyser ton activité, en gardant les décisions entre tes mains.",
+      "pages": [
         {
-          "titre": "Utiliser l",
+          "titre": "Utiliser l'IA pour piloter son activité : ce que tu peux déléguer, et ce que tu gardes",
           "url": "/utiliser-ia-pour-piloter-son-activite.html",
-          "resume": "Utiliser l",
+          "resume": "Comment utiliser l'IA pour préparer ton pilotage, sans lui laisser les décisions.",
           "statut": "en-ligne"
         }
       ]
