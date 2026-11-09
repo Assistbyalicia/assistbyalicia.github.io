@@ -1,0 +1,46 @@
+---
+layout: base.njk
+pagination:
+  data: ressources.clusters
+  size: 1
+  alias: cluster
+permalink: "/ressources-{{ cluster.slug }}.html"
+pageTitle: "{{ cluster.nom }} : ressources"
+title: "{{ cluster.nom }} : toutes les ressources"
+description: "{{ cluster.intro }}"
+---
+<main>
+
+  <section class="hero">
+    <p class="hero-eyebrow">Ressources · {{ cluster.tag }}</p>
+    <h1>
+      {{ cluster.nom }} : <span>tous les articles</span>
+    </h1>
+    <p class="hero-sub">{{ cluster.intro }}</p>
+  </section>
+
+  <article class="section-wrap" style="padding-top: 0;">
+    <div class="grid-3">
+      {% for page in cluster.pages %}
+        {% if page.statut == "en-ligne" %}
+        <div class="card">
+          <h3><a href="{{ page.url }}">{{ page.titre }}</a></h3>
+          <p>{{ page.resume }}</p>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p style="margin-top: var(--space-6);"><a href="/ressources.html" class="btn-secondary">Retour à toutes les ressources</a></p>
+  </article>
+
+  <section class="cta-section">
+    <p class="section-tag">Besoin d'un accompagnement ?</p>
+    <h2>Ces ressources t'aident à <em>voir clair</em>, un appel t'aide à <em>passer à l'action</em></h2>
+    <div class="btns">
+      <a class="btn-primary" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">Réserver un appel diagnostic</a>
+      <a class="btn-secondary" href="/offres.html">Voir mes offres</a>
+    </div>
+  </section>
+
+</main>
