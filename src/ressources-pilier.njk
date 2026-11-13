@@ -5,9 +5,10 @@ pagination:
   size: 1
   alias: cluster
 permalink: "/ressources-{{ cluster.slug }}.html"
-pageTitle: "{{ cluster.nom }} : ressources"
-title: "{{ cluster.nom }} : toutes les ressources"
-description: "{{ cluster.intro }}"
+eleventyComputed:
+  pageTitle: "{{ cluster.nom | safe }} : ressources"
+  title: "{{ cluster.nom | safe }} : toutes les ressources"
+  description: "{{ cluster.intro | safe }}"
 ---
 <main>
 
