@@ -162,14 +162,18 @@
     var form = document.querySelector(".ml-block-form");
     if (!form) return;
 
+    var success = document.querySelector(".ml-form-successBody");
+    var envoye = false;
+
     form.addEventListener("submit", function () {
+      envoye = true;
       track("lead_magnet_submit", { form_name: "audit-de-temps" });
     }, true);
 
-    var success = document.querySelector(".ml-form-successBody");
+    // generate_lead seulement après un envoi réel : pas au chargement de la page
     if (success) {
       var obs = new MutationObserver(function () {
-        if (getComputedStyle(success).display !== "none") {
+        if (envoye && getComputedStyle(success).display !== "none") {
           track("generate_lead", { lead_source: "lead_magnet_audit", form_name: "audit-de-temps" });
           obs.disconnect();
         }
