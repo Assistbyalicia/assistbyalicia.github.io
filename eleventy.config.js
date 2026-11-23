@@ -1,5 +1,6 @@
 module.exports = function(eleventyConfig) {
 
+  eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("includes.js");
   eleventyConfig.addPassthroughCopy("robots.txt");
