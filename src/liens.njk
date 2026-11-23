@@ -1,0 +1,102 @@
+---
+layout: base.njk
+title: "Liens | Assist by Alicia"
+pageTitle: "Liens | Assist by Alicia"
+description: "Les liens utiles d'Assist by Alicia : fiche de process gratuite, audit de temps, ressources Notion et prise de rendez-vous."
+permalink: /liens.html
+noindex: true
+---
+
+<style>
+  /* Page façon bio Instagram : pas de menu ni de pied de page du site */
+  #site-header, #site-footer, .site-header, .site-footer { display: none !important; }
+  .links-page { max-width: 480px; margin: 0 auto; padding: 40px 18px 64px; text-align: center; }
+  .links-page .logo-link img { width: 200px; height: auto; display: inline-block; }
+  .links-page h1 { font-size: 24px; margin: 18px 0 6px; }
+  .links-page .tagline { color: var(--text-muted); font-size: 15px; margin: 0 0 8px; }
+  .links-page .links-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--yellow); margin: 28px 0 10px; font-weight: 600;
+  }
+  .links-page a.link-row {
+    display: flex; align-items: center; gap: 12px; text-align: left;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 12px 16px; margin-bottom: 10px; color: var(--white);
+    text-decoration: none; transition: transform .15s ease, border-color .15s ease;
+  }
+  .links-page a.link-row:hover, .links-page a.link-row:focus-visible {
+    transform: translateY(-2px); border-color: var(--yellow); color: var(--white); outline: none;
+  }
+  .links-page .link-row .emoji { font-size: 22px; flex-shrink: 0; }
+  .links-page .link-row .txt { flex: 1; min-width: 0; }
+  .links-page .link-row .t { display: block; font-weight: 600; font-size: 15px; color: var(--white); }
+  .links-page .link-row .d { display: block; color: var(--text-muted); font-size: 13px; margin-top: 2px; }
+  .links-page .link-row .arrow { color: var(--yellow); font-size: 18px; }
+  .links-page a.link-row.featured { border-color: var(--yellow); background: var(--surface-2); }
+</style>
+
+<main class="links-page">
+
+  <a class="logo-link" href="/index.html" aria-label="Accueil Assist by Alicia">
+    <img src="/Logo.webp" alt="Assist by Alicia" width="200" height="68" />
+  </a>
+
+  <p class="links-label">Les cadeaux</p>
+  <a class="link-row" href="/fiche-process-gratuite.html">
+    <span class="emoji">🎁</span>
+    <span class="txt">
+      <span class="t">Ma fiche de process gratuite</span>
+      <span class="d">Documente tes process et repère ce qui peut être automatisé</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+  <a class="link-row" href="/audit-de-temps.html">
+    <span class="emoji">⏱️</span>
+    <span class="txt">
+      <span class="t">Audit de temps</span>
+      <span class="d">Vois où part ton temps chaque semaine</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+
+  <p class="links-label">Lien du moment</p>
+  <a class="link-row featured" href="/automatiser-notion.html">
+    <span class="emoji">✨</span>
+    <span class="txt">
+      <span class="t">Comment automatiser Notion</span>
+      <span class="d">L'article de la semaine</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+
+  <p class="links-label">Ressources</p>
+  <a class="link-row" href="/ressources.html">
+    <span class="emoji">📚</span>
+    <span class="txt">
+      <span class="t">Toutes mes ressources</span>
+      <span class="d">Guides et articles pour organiser ton activité avec Notion</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+
+  <p class="links-label">Mon site</p>
+  <a class="link-row" href="/index.html">
+    <span class="emoji">🌐</span>
+    <span class="txt">
+      <span class="t">Mon site internet</span>
+      <span class="d">Offres, ressources et accompagnements</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+
+  <p class="links-label">Contact</p>
+  <a class="link-row" href="https://calendar.notion.so/meet/aliciachouquet/30min" target="_blank" rel="noopener noreferrer">
+    <span class="emoji">📅</span>
+    <span class="txt">
+      <span class="t">Prendre rendez-vous</span>
+      <span class="d">Appel diagnostic gratuit de 30 minutes</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+
+</main>
