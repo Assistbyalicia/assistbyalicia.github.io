@@ -192,6 +192,26 @@ permalink: /fiche-process-gratuite.html
 <script>
   window.addEventListener('load', function () { ml('account', '2258522'); });
 </script>
+<script>
+  // Envoi sur place : le formulaire ne quitte pas la page et affiche « Merci ! »
+  (function () {
+    var form = document.querySelector('#mlb2-48928699 form.ml-block-form');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var btn = form.querySelector('button[type=submit]');
+      if (btn) btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: new URLSearchParams(new FormData(form)), mode: 'no-cors' })
+        .then(function () {
+          var box = form.closest('.ml-subscribe-form');
+          box.querySelector('.row-form').style.display = 'none';
+          box.querySelector('.row-success').style.display = 'block';
+        })
+        .catch(function () { if (btn) btn.disabled = false; });
+    });
+  })();
+</script>
       </div>
 
     </div><!-- /hero-split -->
