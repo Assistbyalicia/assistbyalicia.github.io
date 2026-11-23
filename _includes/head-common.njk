@@ -142,7 +142,7 @@
 
     if (href.indexOf("calendar.notion.so") > -1) {
       var leadSource = href.indexOf("diagnostic-outils-numeriques") > -1 ? "diagnostic_stack_ia" : "appel_decouverte";
-      track("generate_lead", Object.assign({ lead_source: leadSource }, base));
+      track("booking_click", Object.assign({ lead_source: leadSource }, base));
     } else if (href.indexOf("stripe.com") > -1) {
       track("begin_checkout", Object.assign({ currency: "EUR", value: 97, items: [{ item_name: "Diagnostic Stack Outils & IA" }] }, base));
     } else if (href.indexOf("mailto:") === 0) {
