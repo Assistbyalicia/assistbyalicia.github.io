@@ -723,6 +723,10 @@ h3 {
   max-width: 900px;
   padding: 0 2rem;
 }
+.stats-row.stats-row-4 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1100px;
+}
 .stats-row + section {
   margin-top: var(--space-16);
 }
@@ -1471,6 +1475,7 @@ footer span { white-space: nowrap; }
 
   .stats-row { gap: 1rem; margin-top: 2.5rem; padding: 0 1.2rem; }
   .stat-card { padding: 1.4rem; }
+  .stats-row.stats-row-4 { grid-template-columns: 1fr 1fr; }
 
   .hero-qsj {
     grid-template-columns: 1fr;
